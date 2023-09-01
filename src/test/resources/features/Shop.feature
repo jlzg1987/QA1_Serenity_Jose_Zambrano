@@ -10,9 +10,9 @@ Feature: Automatizacion de Ecommer E2E
 #Completar el formulario de compra y finalizar
   Scenario Outline: Dinalizar la compra
     Given pagar las compras del carrito
-    When veo formulario <Name> <Country> <City> <Creditcard> <Month> <Year>
+    When veo formulario <name> <country> <city> <creditcard> <month> <year>
     Then Finalizo la compra
     And veo el reporte de la compra
     Examples:
-      | Name | Country | City       | Creditcard | Month  | Year |
+      | name | country | city       | creditcard | month  | year |
       | Jose | Ecuador | Esmeraldas | 1122211111 | Agosto | 2023 |

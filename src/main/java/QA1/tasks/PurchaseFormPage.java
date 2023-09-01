@@ -30,7 +30,7 @@ public class PurchaseFormPage implements Task {
 
 
 
-    public static Performable data(String name, String country, String city, String creditcard, String month, String  year){
+    public static Performable data(String name, String country, String city, String creditcard, String month, String year){
         return instrumented(PurchaseFormPage.class, name, country, city, creditcard, month,year);
     }
     @Override

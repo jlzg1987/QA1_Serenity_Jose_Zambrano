@@ -42,10 +42,11 @@ public void setTheStag(){OnStage.setTheStage(new OnlineCast());}
     public void pagar_las_compras_del_carrito() {
 
     }
-
-    @When("^veo formulario (.*) (.*) (.*) (.*) (.*) (.*)$")
-    public void veo_formulario(String name, String country, String city, String creditCard, String month, String year) {
-        theActorInTheSpotlight().attemptsTo(PurchaseFormPage.data(name, country, city, creditCard, month, year));
+    @When("veo formulario (.*) (.*) (.*) (.*) (.*) (.*)")
+    public void veo_formulario(String name, String country, String city, String creditcard, String month, String year) {
+        theActorInTheSpotlight().attemptsTo(
+                PurchaseFormPage.data(name, country, city, creditcard, month, year)
+        );
     }
 
     @Then("^Finalizo la compra$")
