@@ -4,12 +4,13 @@ import QA1.tasks.AddProductPage;
 import QA1.tasks.OpenPage;
 import QA1.tasks.PurchaseFormPage;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.when;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginGlue {
@@ -18,7 +19,8 @@ private static final String  ACTOR_NAME ="User";
 public void setTheStag(){OnStage.setTheStage(new OnlineCast());}
     @Given("^(.*) estoy en la pagina opencart$")
     public void User_estoy_en_la_pagina_opencart(String actor) {
-        theActorCalled(actor).attemptsTo(OpenPage.loadpage());
+        OnStage.setTheStage(new OnlineCast());
+        OnStage.theActorCalled(actor).wasAbleTo(OpenPage.loadpage());
     }
 
     @When("^seleciona un articulo$")
@@ -37,7 +39,7 @@ public void setTheStag(){OnStage.setTheStage(new OnlineCast());}
     }
 
 
-    @When("veo formulario (.*) (.*) (.*) (.*) (.*) (.*)")
+    @When("veo formulario:")
     public void veo_formulario(String name, String country, String city, String creditcard, String month, String year) {
         theActorInTheSpotlight().attemptsTo(
                 PurchaseFormPage.data(name, country, city, creditcard, month, year)
