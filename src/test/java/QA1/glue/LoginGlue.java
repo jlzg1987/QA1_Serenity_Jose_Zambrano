@@ -45,9 +45,7 @@ public void setTheStag(){OnStage.setTheStage(new OnlineCast());}
 
     @When("^veo formulario (.*) (.*) (.*) (.*) (.*) (.*)$")
     public void veo_formulario(String name, String country, String city, String creditCard, String month, String year) {
-        theActorInTheSpotlight().attemptsTo(
-                PurchaseFormPage.data(name, country, city, creditCard, month, year)
-        );
+        theActorInTheSpotlight().attemptsTo(PurchaseFormPage.data(name, country, city, creditCard, month, year));
     }
 
     @Then("^Finalizo la compra$")

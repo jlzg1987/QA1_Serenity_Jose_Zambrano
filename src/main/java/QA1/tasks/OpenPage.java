@@ -17,6 +17,6 @@ public class OpenPage implements Task {
     }
     @Override
     public <T extends Actor> void performAs(T actor){
-    actor.attemptsTo((Open.url(url)));
+    actor.attemptsTo(Open.url(url));
     }
 }
