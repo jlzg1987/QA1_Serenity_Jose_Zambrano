@@ -4,9 +4,7 @@ import QA1.tasks.AddProductPage;
 import QA1.tasks.OpenPage;
 import QA1.tasks.PurchaseFormPage;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -38,10 +36,7 @@ public void setTheStag(){OnStage.setTheStage(new OnlineCast());}
 
     }
 
-    @Given("^pagar las compras del carrito$")
-    public void pagar_las_compras_del_carrito() {
 
-    }
     @When("veo formulario (.*) (.*) (.*) (.*) (.*) (.*)")
     public void veo_formulario(String name, String country, String city, String creditcard, String month, String year) {
         theActorInTheSpotlight().attemptsTo(

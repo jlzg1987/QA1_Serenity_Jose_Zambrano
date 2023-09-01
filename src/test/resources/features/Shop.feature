@@ -1,6 +1,6 @@
 Feature: Automatizacion de Ecommer E2E
   @happyPath
-  Scenario: Agregar articulos al carrito de compras
+  Scenario Outline: Agregar articulos al carrito de compras
     #Agregar dos productors al carrito y visualizar el cerrito
     Given User estoy en la pagina opencart
     When  seleciona un articulo
@@ -8,8 +8,6 @@ Feature: Automatizacion de Ecommer E2E
     And ver el carrito de compras
 
 #Completar el formulario de compra y finalizar
-  Scenario Outline: Dinalizar la compra
-    Given pagar las compras del carrito
     When veo formulario <name> <country> <city> <creditcard> <month> <year>
     Then Finalizo la compra
     And veo el reporte de la compra
